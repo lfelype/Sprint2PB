@@ -15,6 +15,9 @@ public class Main {
         int divertidoCont = 0;
         int i;
 
+        // O indexOf()método retorna a posição da primeira ocorrência do(s) caractere(s) especificado(s) em uma string.
+        //Foi colocado o emoticon para ser encontrado na frase e somado, caso haja ocorrência.
+
         i = leitura.indexOf(":-)");
 
             while (i != -1){
@@ -30,6 +33,8 @@ public class Main {
             leitura2 = leitura2.substring(i+3);
             i = leitura2.indexOf(":-(");
         }
+
+        //Comparações para expressão do sentimento.
 
         if(divertidoCont > chateadoCont){
             System.out.println("Divertido");
