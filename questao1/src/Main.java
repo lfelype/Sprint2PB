@@ -42,7 +42,7 @@ public class Main {
     static int menu(){
         Scanner sc = new Scanner(System.in);
         int leitura;
-        System.out.println("Inicialmente, digite 1 para salvar os produtos no banco de dados, para posteriormente realizar as alterações" +
+        System.out.println("Inicialmente, digite 1 para salvar os 3 produtos no banco de dados, para posteriormente realizar as alterações" +
                 ". Também iremos listar eles para você!\n");
         System.out.println("Digite 2 para alterar o primeiro produto cadastrado!\n");
         System.out.println("Digite 3 para excluir o segundo produto cadastrado!\n");
