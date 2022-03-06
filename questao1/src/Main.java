@@ -34,7 +34,6 @@ public class Main {
                     System.exit(0);
                 default:
                     System.out.println("\nDigite uma opcao válida, por favor!");
-
             }
         }
     }
@@ -43,10 +42,11 @@ public class Main {
     static int menu(){
         Scanner sc = new Scanner(System.in);
         int leitura;
-        System.out.println("Digite 1 para salvar os produtos e também para listar eles!");
-        System.out.println("Digite 2 para alterar o primeiro produto cadastrado!");
-        System.out.println("Digite 3 para excluir o segundo produto cadastrado!");
-        System.out.println("Digite 4 para listar todos os produtos!");
+        System.out.println("Inicialmente, digite 1 para salvar os produtos no banco de dados, para posteriormente realizar as alterações" +
+                ". Também iremos listar eles para você!\n");
+        System.out.println("Digite 2 para alterar o primeiro produto cadastrado!\n");
+        System.out.println("Digite 3 para excluir o segundo produto cadastrado!\n");
+        System.out.println("Digite 4 para listar todos os produtos!\n");
         System.out.println("Digite 5 para sair!");
         leitura = sc.nextInt();
         return leitura;

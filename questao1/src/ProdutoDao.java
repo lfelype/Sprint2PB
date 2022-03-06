@@ -1,7 +1,6 @@
 import java.sql.*;
 import java.sql.ResultSet;
-import java.util.ArrayList;
-import java.util.List;
+
 
 
 public class ProdutoDao {
@@ -12,7 +11,7 @@ public class ProdutoDao {
     }
 
     public void salvarProduto() throws SQLException {
-
+        //Salvando os produtos no banco de dados
         Statement stm = con.createStatement();
         stm.execute("DROP TABLE IF EXISTS PRODUTO");
         stm.execute("CREATE TABLE PRODUTO (id int auto_increment, nome varchar(50), descricao varchar(250), quantidade int, preco float, primary key (id)) Engine = InnoDB");
@@ -26,7 +25,7 @@ public class ProdutoDao {
 
         PreparedStatement stm = con.prepareStatement("SELECT ID, NOME, DESCRICAO, QUANTIDADE, PRECO FROM PRODUTO");
         stm.execute();
-
+        //Listando os produtos do banco de dados
         ResultSet rst = stm.getResultSet();
         while(rst.next()) {
 
@@ -43,20 +42,21 @@ public class ProdutoDao {
         }
         rst.close();
         stm.close();
-
     }
 
     public void excluirProduto() throws SQLException {
 
-        Statement stm = con.createStatement();
-        stm.execute("DELETE FROM PRODUTO WHERE ID = 2");
-        stm.close();
+        //Excluindo o produto com ID=2
+        PreparedStatement stm = con.prepareStatement("DELETE FROM PRODUTO WHERE ID = ?");
+        stm.setInt(1, 2);
+        stm.execute();
     }
 
     public void alterarProduto() throws SQLException {
 
-        Statement stm = con.createStatement();
-        stm.execute("UPDATE PRODUTO SET NOME = 'ABACATE PODRE', preco = '1.99', descricao = 'CUIDADO AO COMER' WHERE ID = 1");
-        stm.close();
+        //Alterando o produto com ID=1
+        PreparedStatement stm = con.prepareStatement("UPDATE PRODUTO SET NOME = 'ABACATE PODRE', preco = '1.99', descricao = 'CUIDADO AO COMER' WHERE ID = ?");
+        stm.setInt(1, 1);
+        stm.execute();
     }
 }
