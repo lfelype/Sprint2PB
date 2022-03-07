@@ -20,7 +20,7 @@ public class Main {
         //Quando não é encontrado o emotion, o retorno é -1.
 
         i = leitura.indexOf(":-)");
-        while (i != -1 && leitura.length() != 0) {
+        while (i != -1) {
             divertidoCont++;
             //i+3 pois inicia no : e conta 3 caracteres com substring
             leitura = leitura.substring(i + 3);
